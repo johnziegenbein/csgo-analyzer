@@ -1,3 +1,15 @@
-<p>
-  faceit-stats works!
-</p>
+<div style="text-align:center">
+  <h1>
+    Faceit Stats
+  </h1>
+
+  <form>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Faceit user" #newUsername="matInput" (keyup.enter)="setUsername(newUsername.value)">
+    </mat-form-field>
+    <button (click)="setUsername(newUsername.value)">Submit</button>
+
+    <p>You wrote: {{ username }}</p>
+  </form>
+
+</div>

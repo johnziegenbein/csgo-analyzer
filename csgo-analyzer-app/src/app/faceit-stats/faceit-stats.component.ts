@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaceitStatsComponent implements OnInit {
 
+  username = '';
+
+  setUsername(newUsername: string) {
+    this.username = newUsername;
+  }
+
   constructor() { }
 
   ngOnInit() {

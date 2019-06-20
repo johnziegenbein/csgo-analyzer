@@ -5,11 +5,20 @@
 
   <form>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Faceit user" #newUsername="matInput" (keyup.enter)="setUsername(newUsername.value)">
+      <label>
+        <input matInput placeholder="Faceit user" #newUsername="matInput" (keyup.enter)="setUsername(newUsername.value)">
+      </label>
     </mat-form-field>
     <button (click)="setUsername(newUsername.value)">Submit</button>
-
-    <p>You wrote: {{ username }}</p>
   </form>
 
+  <div [hidden]="!showStats">
+
+    <ul id="faceitStatsList">
+      <li *ngFor="let item of stats">
+        {{ item.name }}
+      </li>
+    </ul>
+
+  </div>
 </div>

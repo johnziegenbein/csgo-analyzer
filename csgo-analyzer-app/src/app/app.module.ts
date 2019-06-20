@@ -18,6 +18,7 @@ import {
 } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     MatInputModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [FaceitService],
   bootstrap: [AppComponent]

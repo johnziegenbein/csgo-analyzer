@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FaceitService} from './faceit.service';
-import {FaceitStatsList} from './faceit-stats-list';
 
 @Component({
   selector: 'app-faceit-stats',
@@ -15,7 +14,7 @@ export class FaceitStatsComponent implements OnInit {
 
   constructor(private faceitService: FaceitService) { }
 
-  setUsername(newUsername: string) {
+  getStatsForUserName(newUsername: string) {
     this.username = newUsername;
     if (this.username === '') {
       this.showStats = false;
@@ -27,7 +26,7 @@ export class FaceitStatsComponent implements OnInit {
 
   getStats(): void {
     this.faceitService.getFaceitStats(this.username).subscribe(
-      (res: FaceitStatsList[]) => {
+      (res) => {
         console.log(res);
         this.stats = Array.of(res);
       },
@@ -40,5 +39,4 @@ export class FaceitStatsComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

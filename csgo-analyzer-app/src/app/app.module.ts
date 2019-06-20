@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Http } from '@angular/http';
-
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FaceitService} from './faceit-stats/faceit.service';
@@ -27,7 +25,7 @@ import { AuthInterceptor } from './faceit-stats/auth-interceptor';
     AppComponent,
     routingComponents,
     NavigationComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

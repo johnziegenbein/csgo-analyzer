@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FaceitService} from '../faceit.service';
-import {Observable} from 'rxjs';
+import {Component, OnInit} from '@angular/core';
+import {FaceitService} from './faceit.service';
 import {FaceitStatsList} from './faceit-stats-list';
 
 @Component({
@@ -28,9 +27,9 @@ export class FaceitStatsComponent implements OnInit {
 
   getStats(): void {
     this.faceitService.getFaceitStats(this.username).subscribe(
-      (data: FaceitStatsList) => {
-        console.log('stats: ' + data);
-        this.stats = data;
+      (res: FaceitStatsList[]) => {
+        console.log(res);
+        this.stats = Array.of(res);
       },
       error => {
         console.error('could not retrieve stats: ');

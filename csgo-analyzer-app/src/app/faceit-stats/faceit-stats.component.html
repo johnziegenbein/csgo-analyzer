@@ -12,13 +12,18 @@
     <button (click)="setUsername(newUsername.value)">Submit</button>
   </form>
 
+
+  <ul id="faceitStatsList">
+    <li *ngFor="let item of stats">
+      {{ item.player_id }}
+
+    </li>
+  </ul>
+
   <div [hidden]="!showStats">
 
-    <ul id="faceitStatsList">
-      <li *ngFor="let item of stats">
-        {{ item.name }}
-      </li>
-    </ul>
 
   </div>
+
+
 </div>

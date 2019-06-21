@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FaceitService} from './faceit.service';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-faceit-stats',
@@ -11,8 +12,9 @@ export class FaceitStatsComponent implements OnInit {
   username = '';
   showStats = false;
   stats = [];
+  listImage;
 
-  constructor(private faceitService: FaceitService) { }
+  constructor(private faceitService: FaceitService, private sanitizer: DomSanitizer) { }
 
   getStatsForUserName(newUsername: string) {
     this.username = newUsername;
@@ -34,7 +36,10 @@ export class FaceitStatsComponent implements OnInit {
         console.error('could not retrieve stats: ');
         console.error(error);
       });
+  }
 
+  santizeUrl(url: string) {
+    return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
   ngOnInit() {

@@ -15,9 +15,9 @@
 
 </div>
 
-<!-- lifetime stats-->
-<div [hidden]="!showStats" *ngFor="let item of stats">
 
+<div [hidden]="!showStats" *ngFor="let item of stats">
+  <!-- lifetime stats-->
   <h1 class="username">{{username}}</h1>
   <ul class="doubleColumns" >
     <li>Matches: {{item.lifetime['Matches']}}</li>
@@ -28,9 +28,41 @@
     <li>Total Headshots: {{item.lifetime['Total Headshots %']}}</li>
     <li>Current Win Streak: {{item.lifetime['Current Win Streak']}}</li>
     <li>Longest Win Streak: {{item.lifetime['Longest Win Streak']}}</li>
-
   </ul>
 
+  <br>
+  <!-- segment stats-->
+
+  <div *ngFor="let map of item.segments">
+
+
+    <h1 class="map">{{map['label']}}</h1>
+    <ul class="fiveColumns" [ngStyle]="{'background-image': 'url(' + map['img_regular'] + ')','background-position': 'center center', 'background-size': 'cover'}">
+      <li> Matches: {{map['stats']['Matches']}} </li>
+      <li> Wins: {{map['stats']['Wins']}} </li>
+      <li> Win Ratio: {{map['stats']['Win Rate %']}} % </li>
+
+      <li> Average KD Ratio: {{map['stats']['Average K/D Ratio']}} </li>
+      <li> Average KR Ratio: {{map['stats']['Average K/R Ratio']}} </li>
+      <li> HS Ratio: {{map['stats']['Average Headshots %']}} % </li>
+
+      <li> Average Kills: {{map['stats']['Average Kills']}} </li>
+      <li> Average Deaths: {{map['stats']['Average Deaths']}} </li>
+      <li> Average Assists: {{map['stats']['Average Assists']}} </li>
+
+      <li> Triple Kills: {{map['stats']['Triple Kills']}} </li>
+      <li> Quad Kills: {{map['stats']['Quadro Kills']}} </li>
+      <li> Aces: {{map['stats']['Penta Kills']}} </li>
+
+      <li> Average Triple Kills: {{map['stats']['Average Triple Kills']}} </li>
+      <li> Average Quad Kills: {{map['stats']['Average Quadro Kills']}} </li>
+      <li> Average Aces: {{map['stats']['Average Penta Kills']}} </li>
+
+
+    </ul>
+
+  </div>
 
 </div>
+
 

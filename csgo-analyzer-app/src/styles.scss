@@ -168,7 +168,25 @@ ul.doubleColumns {
   columns: 2;
   list-style-position: inside;
 }
+
+ul.fiveColumns {
+  margin-top: -10px;
+  width:80%;
+  height: 100px;
+  color:red;
+  columns: 5;
+  list-style-position: inside;
+  list-style-type: none;
+  font-weight: bold;
+
+}
+
 h1.username {
   padding-left: 40px;
+}
+
+h1.map {
+  padding-left: 40px;
+  font-size: 18px;
 }
 

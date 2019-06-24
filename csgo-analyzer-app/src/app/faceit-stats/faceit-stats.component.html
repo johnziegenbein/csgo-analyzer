@@ -7,10 +7,10 @@
     <mat-form-field class="example-full-width">
       <label>
         <input matInput placeholder="Faceit user" #newUsername="matInput"
-               (keyup.enter)="getStatsForUserName(newUsername.value)">
+               (keyup.enter)="sendForm(newUsername.value)">
       </label>
     </mat-form-field>
-    <button (click)="getStatsForUserName(newUsername.value)">Submit</button>
+    <button (click)="sendForm(newUsername.value)">Submit</button>
   </form>
 
 </div>

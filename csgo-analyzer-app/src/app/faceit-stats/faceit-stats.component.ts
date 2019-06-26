@@ -20,6 +20,7 @@ export class FaceitStatsComponent implements OnInit {
 
 
   sendForm(newUsername: string) {
+    this.showStats = false;
     this.setUsername(newUsername);
     this.getUserIdAndStats();
 
@@ -27,7 +28,6 @@ export class FaceitStatsComponent implements OnInit {
 
   setUsername(newUsername: string) {
     this.username = newUsername;
-    this.showStats = this.username !== '';
   }
 
   getUserIdAndStats() {
@@ -44,6 +44,7 @@ export class FaceitStatsComponent implements OnInit {
         this.getStats();
       },
       error => {
+        alert('Could not aquire stats from faceit. Please provide correct username');
         console.error('could not retrieve stats: ');
         console.error(error);
       });
@@ -55,10 +56,14 @@ export class FaceitStatsComponent implements OnInit {
         console.log('----result FaceitStats----');
         console.log(res);
         this.stats = Array.of(res);
+        this.showStats = true;
       },
       error => {
         console.error('could not retrieve stats: ');
         console.error(error);
+        alert('Could not aquire stats from faceit. Please provide correct username');
+        this.username = '';
+        this.showStats = false;
       });
   }
 

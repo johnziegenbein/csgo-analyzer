@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FaceitService} from './faceit.service';
-import {DomSanitizer} from '@angular/platform-browser';
-import {sync} from 'glob';
 
 @Component({
   selector: 'app-faceit-stats',
@@ -12,10 +10,11 @@ export class FaceitStatsComponent implements OnInit {
 
   username = '';
   showStats = false;
-  stats = [];
+  stats;
+  profile;
   userId: '';
 
-  constructor(private faceitService: FaceitService, private sanitizer: DomSanitizer) {
+  constructor(private faceitService: FaceitService) {
   }
 
 
@@ -33,9 +32,11 @@ export class FaceitStatsComponent implements OnInit {
   getUserIdAndStats() {
     this.faceitService.getFaceitId(this.username).subscribe(
       (res) => {
-        const list = Array.of(res);
-        console.log('Faceit id: ' + list[0].player_id);
-        this.userId = list[0].player_id.toString();
+        const list = res;
+        console.log(list);
+        console.log('Faceit id: ' + list.player_id);
+        this.profile = list;
+        this.userId = list.player_id.toString();
 
         // get stats is chained inside the subscribe to assure
         // userId is set as observables are asynchronous
@@ -55,7 +56,7 @@ export class FaceitStatsComponent implements OnInit {
       (res) => {
         console.log('----result FaceitStats----');
         console.log(res);
-        this.stats = Array.of(res);
+        this.stats = res;
         this.showStats = true;
       },
       error => {

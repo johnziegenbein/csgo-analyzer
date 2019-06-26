@@ -6,33 +6,32 @@
   <form>
     <mat-form-field>
       <label>
-        <input matInput placeholder="Faceit Username" #newUsername="matInput"
-               (keyup.enter)="sendForm(newUsername.value)">
+        <input matInput placeholder="Faceit Username" #newUsername="matInput" (keyup.enter)="sendForm(newUsername.value)">
       </label>
     </mat-form-field>
     <button class="btn btn-primary" (click)="sendForm(newUsername.value)">Submit</button>
   </form>
 </div>
 
-<div class="container-fluid" [hidden]="!showStats" *ngFor="let item of stats">
+<div class="container-fluid" [hidden]="!showStats" *ngIf="stats!=undefined">
   <!-- lifetime stats-->
   <div class="container-fluid">
     <h2>{{username}}</h2>
     <ul class="doubleColumns">
-      <li> Matches: {{item.lifetime['Matches']}} </li>
-      <li> Wins: {{item.lifetime['Wins']}} </li>
-      <li> Win Ratio: {{item.lifetime['Win Rate %']}} %</li>
-      <li> KD Ratio: {{item.lifetime['Average K/D Ratio']}} </li>
-      <li> Headshot: {{item.lifetime['Average Headshots %']}} %</li>
-      <li> Total Headshots: {{item.lifetime['Total Headshots %']}} </li>
-      <li> Current Win Streak: {{item.lifetime['Current Win Streak']}} </li>
-      <li> Longest Win Streak: {{item.lifetime['Longest Win Streak']}} </li>
+      <li> Matches: {{stats.lifetime['Matches']}} </li>
+      <li> Wins: {{stats.lifetime['Wins']}} </li>
+      <li> Win Ratio: {{stats.lifetime['Win Rate %']}} %</li>
+      <li> KD Ratio: {{stats.lifetime['Average K/D Ratio']}} </li>
+      <li> Headshot: {{stats.lifetime['Average Headshots %']}} %</li>
+      <li> Total Headshots: {{stats.lifetime['Total Headshots %']}} </li>
+      <li> Current Win Streak: {{stats.lifetime['Current Win Streak']}} </li>
+      <li> Longest Win Streak: {{stats.lifetime['Longest Win Streak']}} </li>
     </ul>
   </div>
 
   <br>
   <!-- map stats-->
-  <div class="row" *ngFor="let map of item.segments">
+  <div class="row" *ngFor="let map of stats['segments'] ">
     <h3 style="padding-left:15px"> {{map['label']}}</h3>
     <div class="col-sm-1">
       <img src="{{map['img_regular']}}" alt="..." class="rounded">

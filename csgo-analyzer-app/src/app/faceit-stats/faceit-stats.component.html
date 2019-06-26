@@ -6,7 +6,7 @@
   <form>
     <mat-form-field>
       <label>
-        <input matInput placeholder="Faceit Username" #newUsername="matInput" (keyup.enter)="sendForm(newUsername.value)">
+        <input matInput placeholder="Faceit Username" #newUsername="matInput">
       </label>
     </mat-form-field>
     <button class="btn btn-primary" (click)="sendForm(newUsername.value)">Submit</button>

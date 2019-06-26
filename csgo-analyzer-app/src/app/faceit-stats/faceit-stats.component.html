@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
   <h1>
     Faceit Stats
   </h1>
@@ -13,20 +13,35 @@
   </form>
 </div>
 
-<div class="container-fluid" [hidden]="!showStats" *ngIf="stats!=undefined">
+<div class="container" [hidden]="!showStats" *ngIf="stats!=undefined && profile!=undefined">
   <!-- lifetime stats-->
-  <div class="container-fluid">
+  <div class="card mb-3" style="max-width: 600px;">
     <h2>{{username}}</h2>
-    <ul class="doubleColumns">
-      <li> Matches: {{stats.lifetime['Matches']}} </li>
-      <li> Wins: {{stats.lifetime['Wins']}} </li>
-      <li> Win Ratio: {{stats.lifetime['Win Rate %']}} %</li>
-      <li> KD Ratio: {{stats.lifetime['Average K/D Ratio']}} </li>
-      <li> Headshot: {{stats.lifetime['Average Headshots %']}} %</li>
-      <li> Total Headshots: {{stats.lifetime['Total Headshots %']}} </li>
-      <li> Current Win Streak: {{stats.lifetime['Current Win Streak']}} </li>
-      <li> Longest Win Streak: {{stats.lifetime['Longest Win Streak']}} </li>
-    </ul>
+    <div class="row no-gutters">
+      <div class="col-md-3">
+        <img src="{{profile['avatar']}}" class="card-img" alt="..." width="150" height="150">
+      </div>
+      <div class="col-md-4">
+        <div class="card-body">
+          <ul>
+            <li> Matches: {{stats.lifetime['Matches']}} </li>
+            <li> Wins: {{stats.lifetime['Wins']}} </li>
+            <li> Win Ratio: {{stats.lifetime['Win Rate %']}} %</li>
+            <li> KD Ratio: {{stats.lifetime['Average K/D Ratio']}} </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="card-body">
+          <ul>
+            <li> Headshot: {{stats.lifetime['Average Headshots %']}} %</li>
+            <li> Total Headshots: {{stats.lifetime['Total Headshots %']}} </li>
+            <li> Current Win Streak: {{stats.lifetime['Current Win Streak']}} </li>
+            <li> Longest Win Streak: {{stats.lifetime['Longest Win Streak']}} </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 
   <br>
@@ -34,7 +49,7 @@
   <div class="row" *ngFor="let map of stats['segments'] ">
     <h3 style="padding-left:15px"> {{map['label']}}</h3>
     <div class="col-sm-1">
-      <img src="{{map['img_regular']}}" alt="..." class="rounded">
+      <img src="{{map['img_regular']}}" alt="..." class="rounded" width="200" height="125">
     </div>
     <div class="col-sm-6">
       <ul class="fiveColumns">

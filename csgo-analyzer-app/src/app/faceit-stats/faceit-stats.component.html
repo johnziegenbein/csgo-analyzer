@@ -15,8 +15,8 @@
 
 <div class="container" [hidden]="!showStats" *ngIf="stats!=undefined && profile!=undefined">
   <!-- lifetime stats-->
-  <div class="card mb-3" style="max-width: 600px;">
-    <h2>{{username}}</h2>
+  <div class="card border-dark mb-3" style="max-width: 600px;">
+    <div class="card-header" style="font-weight: bold; font-size: 24px">{{username}}</div>
     <div class="row no-gutters">
       <div class="col-md-3">
         <img src="{{profile['avatar']}}" class="card-img" alt="..." width="150" height="150">

@@ -5,10 +5,9 @@
   <ng-container *ngIf="showLifetimeStats">
     <div class="card-header" style="font-weight: bold; font-size: 24px">
       <span>{{profile['nickname']}}</span>
-      <br>
-      <span class="text-muted mb-0 mt-0" style="font-size: 18px">
-    Faceit Rank: {{profile['games']['csgo']['skill_level']}} ({{profile['games']['csgo']['faceit_elo']}})
-    </span>
+      <span class="text-muted mb-0 mt-0" style="font-size: 18px; float: right">
+        Faceit Rank: {{profile['games']['csgo']['skill_level']}} ({{profile['games']['csgo']['faceit_elo']}})
+      </span>
     </div>
     <div class="row no-gutters">
       <div class="col-md-1.5">

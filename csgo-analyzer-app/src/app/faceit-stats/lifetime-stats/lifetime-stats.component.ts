@@ -30,6 +30,7 @@ export class LifetimeStatsComponent implements OnInit, OnChanges {
   ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
     if (this.stats != undefined ) {
       this.calculateAverageStatsFromMapStats();
+      this.showLifetimeStats = true;
     }
   }
 

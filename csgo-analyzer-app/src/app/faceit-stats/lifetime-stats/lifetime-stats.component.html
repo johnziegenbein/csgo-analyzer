@@ -1,9 +1,9 @@
-<div class="card border-dark mb-3" style="width: 1200px;">
+<div class="card mb-3" style="width: 1200px; background: gray; color: black">
   <div class="card-header bg-primary" style="font-weight: bold; font-size: 24px; border: solid thin black;"
        (click)="toggleShowLifetimeStats()">Profile
   </div>
   <ng-container *ngIf="showLifetimeStats">
-    <div class="card-header" style="font-weight: bold; font-size: 24px">
+    <div class="card-header" style="font-weight: bold; font-size: 24px; background: #424242; color: lightgrey">
       <span>{{profile['nickname']}}</span>
       <span class="text-muted mb-0 mt-0" style="font-size: 18px; float: right">
         Faceit Rank: {{profile['games']['csgo']['skill_level']}} ({{profile['games']['csgo']['faceit_elo']}})

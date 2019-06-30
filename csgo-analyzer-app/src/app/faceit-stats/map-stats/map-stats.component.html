@@ -1,9 +1,9 @@
-<div class="card border-dark mb-3">
+<div class="card border-dark mb-3" style="background: gray; color: black">
   <div class="card-header bg-primary" style="font-weight: bold; font-size: 24px; border: solid thin black;" (click)="toggleShowMaps()">Map Stats</div>
   <ng-container *ngIf="showMaps">
     <ng-container *ngFor="let map of stats['segments']">
-      <div class="card">
-        <div class="card-header" style="font-weight: bold; font-size: 20px">{{map['label']}}</div>
+      <div class="card" style="background: gray; color: black">
+        <div class="card-header" style="font-weight: bold; font-size: 20px; background: #424242; color: lightgrey">{{map['label']}}</div>
         <div class="row no-gutters">
           <div class="col-md-2">
             <img src="{{map['img_regular']}}" alt="..." class="rounded" width="200" height="125">

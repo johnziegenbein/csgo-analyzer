@@ -20,6 +20,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './faceit-stats/auth-interceptor';
 import { LifetimeStatsComponent } from './faceit-stats/lifetime-stats/lifetime-stats.component';
+import { MapStatsComponent } from './faceit-stats/map-stats/map-stats.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LifetimeStatsComponent } from './faceit-stats/lifetime-stats/lifetime-s
     NavigationComponent,
     HomeComponent,
     LifetimeStatsComponent,
+    MapStatsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,61 @@
+<div class="row" *ngFor="let map of stats['segments'] ">
+
+  <div class="card mb-3" style="width: 1800px;">
+    <div class="card-header" style="font-weight: bold; font-size: 24px">{{map['label']}}</div>
+    <div class="row no-gutters">
+      <div class="col-md-2">
+        <img src="{{map['img_regular']}}" alt="..." class="rounded" width="200" height="125">
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+          <ul style="list-style-type: none">
+            <h6 class="card-title mt-2">Matches and Wins</h6>
+            <li> Matches: {{map['stats']['Matches']}} </li>
+            <li> Wins: {{map['stats']['Wins']}} </li>
+            <li> Win Ratio: {{map['stats']['Win Rate %']}} %</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+          <ul style="list-style-type: none">
+            <h6 class="card-title mt-2">Ratios</h6>
+            <li> Avg KD Ratio: {{map['stats']['Average K/D Ratio']}} </li>
+            <li> Avg KR Ratio: {{map['stats']['Average K/R Ratio']}} </li>
+            <li> HS Ratio: {{map['stats']['Average Headshots %']}} %</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+          <ul style="list-style-type: none">
+            <h6 class="card-title mt-2">Average Stats</h6>
+            <li> Avg Kills: {{map['stats']['Average Kills']}} </li>
+            <li> Avg Deaths: {{map['stats']['Average Deaths']}} </li>
+            <li> Avg Assists: {{map['stats']['Average Assists']}} </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+          <ul style="list-style-type: none">
+            <h6 class="card-title mt-2">Multi Kills</h6>
+            <li> Triple Kills: {{map['stats']['Triple Kills']}} </li>
+            <li> Quad Kills: {{map['stats']['Quadro Kills']}} </li>
+            <li> Aces: {{map['stats']['Penta Kills']}} </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+          <ul style="list-style-type: none">
+            <h6 class="card-title mt-2">Average Multi Kills</h6>
+            <li> Avg Triple Kills: {{map['stats']['Average Triple Kills']}} </li>
+            <li> Avg Quad Kills: {{map['stats']['Average Quadro Kills']}} </li>
+            <li> Avg Aces: {{map['stats']['Average Penta Kills']}} </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

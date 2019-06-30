@@ -8,10 +8,14 @@ import {Component, Input, OnInit} from '@angular/core';
 export class MapStatsComponent implements OnInit {
 
   @Input() stats;
+  showMaps = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleShowMaps() {
+    this.showMaps = !this.showMaps;
+  }
 }

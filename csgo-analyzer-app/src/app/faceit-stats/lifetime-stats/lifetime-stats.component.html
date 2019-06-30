@@ -1,5 +1,11 @@
 <div class="card border-dark mb-3" style="width: 800px;">
-  <div class="card-header" style="font-weight: bold; font-size: 24px">{{profile['nickname']}}</div>
+  <div class="card-header" style="font-weight: bold; font-size: 24px">
+    <span>{{profile['nickname']}}</span>
+    <br>
+    <span class="text-muted mb-0 mt-0" style="font-size: 18px">
+    Faceit Rank: {{profile['games']['csgo']['skill_level']}} ({{profile['games']['csgo']['faceit_elo']}})
+    </span>
+  </div>
   <div class="row no-gutters">
     <div class="col-md-2">
       <img src="{{profile['avatar']}}" class="card-img" alt="..." width="150" height="150">

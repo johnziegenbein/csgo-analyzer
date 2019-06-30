@@ -9,6 +9,7 @@ export class LifetimeStatsComponent implements OnInit, OnChanges {
 
   @Input() stats;
   @Input() profile;
+  showLifetimeStats = true;
   private avgKills: number;
   private avgDeaths: number;
   private avgAssists: number;
@@ -53,6 +54,10 @@ export class LifetimeStatsComponent implements OnInit, OnChanges {
     this.avgTripleKill = tripleKill / this.stats['lifetime']['Matches'];
     this.avgQuadKill = quadKill / this.stats['lifetime']['Matches'];
     this.avgAce = ace / this.stats['lifetime']['Matches'];
+  }
+
+  toggleShowLifetimeStats() {
+    this.showLifetimeStats = !this.showLifetimeStats;
   }
 }
 

@@ -17,12 +17,15 @@ export class FaceitStatsComponent implements OnInit {
   constructor(private faceitService: FaceitService) {
   }
 
+  fillLifeTimeStatsComponent() {
+
+  }
+
 
   sendForm(newUsername: string) {
     this.showStats = false;
     this.setUsername(newUsername);
     this.getUserIdAndStats();
-
   }
 
   setUsername(newUsername: string) {

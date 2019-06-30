@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './faceit-stats/auth-interceptor';
+import { LifetimeStatsComponent } from './faceit-stats/lifetime-stats/lifetime-stats.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AuthInterceptor } from './faceit-stats/auth-interceptor';
     routingComponents,
     NavigationComponent,
     HomeComponent,
+    LifetimeStatsComponent,
   ],
   imports: [
     BrowserModule,

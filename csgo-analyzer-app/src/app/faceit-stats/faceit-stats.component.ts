@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FaceitService} from './faceit.service';
-import {PlayerStats} from "./player-stats";
+import {PlayerStats} from './player-stats';
 
 @Component({
   selector: 'app-faceit-stats',
@@ -82,12 +82,10 @@ export class FaceitStatsComponent implements OnInit {
       (res) => {
         console.log('----result MapHistory----');
         console.log(res);
-        
+
         for (let match of res['items']) {
           this.getMatchResults(match['match_id']);
         }
-
-        console.log(this.recentPerformance.matches);
       },
       error => {
         console.error('could not retrieve performance stats: ');
@@ -101,7 +99,7 @@ export class FaceitStatsComponent implements OnInit {
       (res) => {
         let match = res['rounds'][0];
         this.recentPerformance.matches ++;
-        for(let team of match['teams']) {
+        for (let team of match['teams']) {
           for (let player of team['players']) {
             if (player['player_id'] == this.userId) {
               this.recentPerformance.kills += Number(player['player_stats']['Kills']);
@@ -115,7 +113,7 @@ export class FaceitStatsComponent implements OnInit {
               this.recentPerformance.tripleKills += Number(player['player_stats']['Triple Kills']);
               this.recentPerformance.quadKills += Number(player['player_stats']['Quadro Kills']);
               this.recentPerformance.aces += Number(player['player_stats']['Penta Kills']);
-              
+
               if (player['player_stats']['Result'] == 1) {
                 this.recentPerformance.wins ++;
               }
@@ -129,7 +127,6 @@ export class FaceitStatsComponent implements OnInit {
         alert('Could not aquire match stats from faceit.');
       });
   }
-
 
   ngOnInit() {
   }

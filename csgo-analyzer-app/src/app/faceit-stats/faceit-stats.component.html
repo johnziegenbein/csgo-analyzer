@@ -3,11 +3,14 @@
 
   <form class="form-inline ml-3">
     <div class="form-group">
-      <input type="faceitUsername" placeholder="Enter Faceit Username" class="form-control"
+      <input type="string" placeholder="Enter Faceit Username" class="form-control"
              ngModel name="username" id="username" #username="ngModel"
              style="background-color: lightgrey">
+      <input type="number" placeholder="Matches (1-100)" class="form-control"
+             ngModel name="amountOfMatchese" id="amountOfMatches" #amountOfMatches="ngModel"
+             style="background-color: lightgrey" >
     </div>
-    <button type="submit" class="btn btn-primary" style="color: lightgrey" (click)="sendForm(username.value)">Submit
+    <button type="submit" class="btn btn-primary" style="color: lightgrey" (click)="sendForm(username.value, amountOfMatches.value.valueOf())">Submit
     </button>
   </form>
 

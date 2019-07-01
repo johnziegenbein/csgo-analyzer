@@ -15,11 +15,14 @@ export class FaceitStatsComponent implements OnInit {
   profile;
   userId: '';
   recentPerformance = new PlayerStats();
+  amountOfMatches = 0;
 
   constructor(private faceitService: FaceitService) {
   }
 
-  sendForm(newUsername: string) {
+  sendForm(newUsername: string, value: number) {
+
+    this.amountOfMatches = value;
     this.showStats = false;
     this.setUsername(newUsername);
     this.recentPerformance = new PlayerStats();
@@ -78,7 +81,7 @@ export class FaceitStatsComponent implements OnInit {
 
 
   getRecentPerformanceStats(): void {
-    this.faceitService.getMapHistory(this.userId, 5).subscribe(
+    this.faceitService.getMapHistory(this.userId, this.amountOfMatches).subscribe(
       (res) => {
         console.log('----result MapHistory----');
         console.log(res);

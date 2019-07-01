@@ -4,20 +4,29 @@
   <form class="form-inline ml-3">
     <div class="form-group">
       <input type="faceitUsername" placeholder="Enter Faceit Username" class="form-control"
-             ngModel name="username"  id="username" #username="ngModel"
-              style="background-color: lightgrey">
+             ngModel name="username" id="username" #username="ngModel"
+             style="background-color: lightgrey">
     </div>
-    <button type="submit" class="btn btn-primary" style="color: lightgrey" (click)="sendForm(username.value)">Submit</button>
+    <button type="submit" class="btn btn-primary" style="color: lightgrey" (click)="sendForm(username.value)">Submit
+    </button>
   </form>
 
   <br><br><br>
 
-<div class="container" [hidden]="!showStats" *ngIf="stats!=undefined && profile!=undefined">
-  <!-- lifetime stats-->
-  <app-lifetime-stats [stats]="this.stats" [profile]="profile"></app-lifetime-stats>
+  <div class="container" [hidden]="!showStats" *ngIf="stats!=undefined && profile!=undefined">
+    <!-- lifetime stats-->
+    <app-lifetime-stats [stats]="this.stats" [profile]="profile"></app-lifetime-stats>
 
-  <br>
-  <!-- map stats-->
-  <app-map-stats [stats]="this.stats"></app-map-stats>
+    <br>
+    <br>
 
+    <!-- recent performance -->
+    <app-recent-performance></app-recent-performance>
+
+    <br>
+    <br>
+    <!-- map stats-->
+    <app-map-stats [stats]="this.stats"></app-map-stats>
+
+  </div>
 </div>

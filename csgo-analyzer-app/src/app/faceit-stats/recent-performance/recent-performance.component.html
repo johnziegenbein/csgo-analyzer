@@ -1,0 +1,64 @@
+<div class="card mb-3" style="width: 1200px; background: gray; color: black">
+  <div class="card-header bg-primary" style="font-weight: bold; font-size: 24px; border: solid thin black;"
+       (click)="toggleShowRecentPerformance()">Recent Performance
+  </div>
+  <ng-container *ngIf="showRecentPerformance">
+    <div class="card-header" style="font-weight: bold; font-size: 24px; background: #424242; color: lightgrey">
+      Some good title ???? !!!! ?
+    </div>
+    <div class="row no-gutters">
+      <div class="col-md-1.5">
+        <img src="" class="card-img" alt="..." width="150" height="150">
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+          <ul style="list-style-type: none">
+            <h6 class="card-title mt-2">Matches and Wins</h6>
+            <li>]}} </li>
+            <li>]}} </li>
+            <li>'Win Rate %']}} %</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+          <ul style="list-style-type: none">
+            <h6 class="card-title mt-2">Ratios</h6>
+            <li>lifetime['Average K/D Ratio']}} </li>
+            <li>Headshots %']}} %</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+          <ul style="list-style-type: none">
+            <h6 class="card-title mt-2">Stats</h6>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+          <ul style="list-style-type: none">
+            <h6 class="card-title mt-2">Avg Stats</h6>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card-body">
+          <ul style="list-style-type: none">
+            <h6 class="card-title mt-2">Avg Multi Kills</h6>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

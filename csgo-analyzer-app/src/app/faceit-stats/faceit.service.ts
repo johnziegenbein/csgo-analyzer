@@ -22,5 +22,11 @@ export class FaceitService {
     console.log(url);
     return this.http.get(url);
   }
+
+  getMapHistory(userId: string, amountOfMatches: number): Observable<any> {
+    const url = 'https://open.faceit.com/data/v4/players/' + userId + '/history?game=csgo&from=946684800&offset=0&limit=' + amountOfMatches.toString();
+    console.log(url);
+    return this.http.get(url);
+  }
 }
 

@@ -44,13 +44,32 @@ export class FaceitStatsComponent implements OnInit {
         // get stats is chained inside the subscribe to assure
         // userId is set as observables are asynchronous
         // and fixing it the other way with promises is
-        // the most annoying thing ive ever seen
+        // the most annoying thing ive ever see
         this.getStats();
+
+        this.getRecentPerformanceStats();
       },
       error => {
-        alert('Could not aquire stats from faceit. Please provide correct username');
-        console.error('could not retrieve stats: ');
+        alert('Could not aquire UserId from faceit. Please provide correct username');
+        console.error('could not retrieve UserId: ');
         console.error(error);
+      });
+  }
+
+
+  getRecentPerformanceStats(): void {
+    this.faceitService.getMapHistory(this.userId, 10).subscribe(
+      (res) => {
+        console.log('----result MapHistory----');
+        console.log(res);
+
+        // for each match
+        // call faceit match result by match id
+      },
+      error => {
+        console.error('could not retrieve performance stats: ');
+        console.error(error);
+        alert('Could not aquire performance stats from faceit.');
       });
   }
 

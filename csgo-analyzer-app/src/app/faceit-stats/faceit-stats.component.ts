@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FaceitService} from './faceit.service';
+import {PlayerStats} from "./player-stats";
 
 @Component({
   selector: 'app-faceit-stats',
@@ -13,6 +14,7 @@ export class FaceitStatsComponent implements OnInit {
   stats;
   profile;
   userId: '';
+  recentPerformance = new PlayerStats();
 
   constructor(private faceitService: FaceitService) {
   }
@@ -20,6 +22,7 @@ export class FaceitStatsComponent implements OnInit {
   sendForm(newUsername: string) {
     this.showStats = false;
     this.setUsername(newUsername);
+    this.recentPerformance = new PlayerStats();
     this.getUserIdAndStats();
   }
 
@@ -46,8 +49,6 @@ export class FaceitStatsComponent implements OnInit {
         // and fixing it the other way with promises is
         // the most annoying thing ive ever see
         this.getStats();
-
-        this.getRecentPerformanceStats();
       },
       error => {
         alert('Could not aquire UserId from faceit. Please provide correct username');
@@ -63,6 +64,8 @@ export class FaceitStatsComponent implements OnInit {
         console.log(res);
         this.stats = res;
         this.showStats = true;
+
+        this.getRecentPerformanceStats();
       },
       error => {
         console.error('could not retrieve stats: ');
@@ -75,15 +78,16 @@ export class FaceitStatsComponent implements OnInit {
 
 
   getRecentPerformanceStats(): void {
-    this.faceitService.getMapHistory(this.userId, 10).subscribe(
+    this.faceitService.getMapHistory(this.userId, 2).subscribe(
       (res) => {
         console.log('----result MapHistory----');
         console.log(res);
         
         for (let match of res['items']) {
           this.getMatchResults(match['match_id']);
-
         }
+
+        console.log(this.recentPerformance.matches);
       },
       error => {
         console.error('could not retrieve performance stats: ');
@@ -99,7 +103,29 @@ export class FaceitStatsComponent implements OnInit {
 
         console.log(res['rounds'][0]);
         let match = res['rounds'][0];
+        let teamId = '';
+        this.recentPerformance.matches ++;
+        for(let team of match['teams']) {
+          for (let player of team['players']) {
+            if (player['player_id'] == this.userId) {
+              teamId = team['team_id'];
+              this.recentPerformance.kills += Number(player['player_stats']['Kills']);
+              this.recentPerformance.deaths += Number(player['player_stats']['Deaths']);
+              this.recentPerformance.assists += Number(player['player_stats']['Assists']);
 
+              this.recentPerformance.sumOfKRRatio += Number(player['player_stats']['K/R Ratio']);
+              this.recentPerformance.sumOfKDRatio += Number(player['player_stats']['K/D Ratio']);
+              this.recentPerformance.sumOfHeadshotPercent += Number(player['player_stats']['Headshots %']);
+
+              this.recentPerformance.tripleKills += Number(player['player_stats']['Triple Kills']);
+              this.recentPerformance.quadKills += Number(player['player_stats']['Quadro Kills']);
+              this.recentPerformance.aces += Number(player['player_stats']['Penta Kills']);
+            }
+          }
+        }
+        if (teamId == match['round_stats']['Winner']) {
+          this.recentPerformance.wins ++;
+        }
 
       },
       error => {

@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61f70496-384f-4010-9d3c-fe325da6ffef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/csgo-analyzer-app/src/app/demo-analyzer/demo-analyzer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/csgo-analyzer-app/src/app/demo-analyzer/demo-analyzer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/faceit-stats.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/faceit-stats.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/faceit-stats.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/faceit-stats.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csgo-analyzer-app/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/csgo-analyzer-app/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csgo-analyzer-app/src/app/navigation/navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/csgo-analyzer-app/src/app/navigation/navigation.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csgo-analyzer-app/src/app/navigation/navigation.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/csgo-analyzer-app/src/app/navigation/navigation.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csgo-analyzer-app/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/csgo-analyzer-app/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,24 +23,6 @@
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/node_modules/bootstrap/dist/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="7400" column="1" selection-start-line="7400" selection-start-column="1" selection-end-line="7400" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/faceit-stats.component.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -80,16 +53,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="109" lean-forward="true" selection-start-line="8" selection-start-column="109" selection-end-line="8" selection-end-column="109" />
+            <state relative-caret-position="85">
+              <caret line="5" column="109" lean-forward="true" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="109" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#div#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="113" selection-start-line="5" selection-start-column="113" selection-end-line="5" selection-end-column="113" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#ng-container#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#ng-container#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#ng-container#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,6 +107,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
               <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="35" selection-start-column="35" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -179,7 +177,6 @@
         <option value="$PROJECT_DIR$/csgo-analyzer-app/README.md" />
         <option value="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/faceit-stats.component.ts" />
         <option value="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.ts" />
-        <option value="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.html" />
         <option value="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.ts" />
         <option value="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.scss" />
         <option value="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.scss" />
@@ -191,6 +188,7 @@
         <option value="$PROJECT_DIR$/csgo-analyzer-app/src/app/navigation/navigation.component.scss" />
         <option value="$PROJECT_DIR$/csgo-analyzer-app/src/styles.scss" />
         <option value="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.html" />
+        <option value="$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.html" />
       </list>
     </option>
   </component>
@@ -361,13 +359,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87783000" />
+    <option name="totallyTimeSpent" value="88240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21268657" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21268657" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -385,7 +382,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="TypeScript" order="10" weight="0.32936078" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.54584223" visible="true" weight="0.33586133" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.54584223" visible="true" weight="0.33586133" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.45415777" side_tool="true" visible="true" weight="0.33586133" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -653,22 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="144" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="150" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#2;n#div#1;n#div#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#3;n#div#1;n#div#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#4;n#div#1;n#div#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#5;n#div#1;n#div#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="536">
@@ -737,13 +718,6 @@
           <folding>
             <element signature="e#0#73#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" selection-start-column="35" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -826,13 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/styles.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -847,15 +814,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="109" lean-forward="true" selection-start-line="8" selection-start-column="109" selection-end-line="8" selection-end-column="109" />
+        <state relative-caret-position="85">
+          <caret line="5" column="109" lean-forward="true" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="109" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#div#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="113" selection-start-line="5" selection-start-column="113" selection-end-line="5" selection-end-column="113" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ng-container#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ng-container#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#ng-container#0;n#ng-container#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

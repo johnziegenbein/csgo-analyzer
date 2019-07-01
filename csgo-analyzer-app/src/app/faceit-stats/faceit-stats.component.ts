@@ -78,7 +78,7 @@ export class FaceitStatsComponent implements OnInit {
 
 
   getRecentPerformanceStats(): void {
-    this.faceitService.getMapHistory(this.userId, 2).subscribe(
+    this.faceitService.getMapHistory(this.userId, 5).subscribe(
       (res) => {
         console.log('----result MapHistory----');
         console.log(res);
@@ -120,13 +120,13 @@ export class FaceitStatsComponent implements OnInit {
               this.recentPerformance.tripleKills += Number(player['player_stats']['Triple Kills']);
               this.recentPerformance.quadKills += Number(player['player_stats']['Quadro Kills']);
               this.recentPerformance.aces += Number(player['player_stats']['Penta Kills']);
+              
+              if (player['player_stats']['Result'] == 1) {
+                this.recentPerformance.wins ++;
+              }
             }
           }
         }
-        if (teamId == match['round_stats']['Winner']) {
-          this.recentPerformance.wins ++;
-        }
-
       },
       error => {
         console.error('could not retrieve match stats: ');

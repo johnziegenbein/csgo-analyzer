@@ -14,9 +14,9 @@
         <div class="card-body">
           <ul style="list-style-type: none">
             <h6 class="card-title mt-2">Matches and Wins</h6>
-            <li>]}} </li>
-            <li>]}} </li>
-            <li>'Win Rate %']}} %</li>
+            <li> Matches: {{recentPerformanceStats.matches}} </li>
+            <li> Wins: {{recentPerformanceStats.wins}}  </li>
+            <li> Win Ratio: {{recentPerformanceStats.wins/recentPerformanceStats.matches* 100 | number: '1.0-2' }} %</li>
           </ul>
         </div>
       </div>
@@ -24,8 +24,9 @@
         <div class="card-body">
           <ul style="list-style-type: none">
             <h6 class="card-title mt-2">Ratios</h6>
-            <li>lifetime['Average K/D Ratio']}} </li>
-            <li>Headshots %']}} %</li>
+            <li> Avg KD Ratio: {{recentPerformanceStats.sumOfKDRatio/recentPerformanceStats.matches | number: '1.2-2'}}</li>
+            <li> Headshots: {{recentPerformanceStats.sumOfHeadshotPercent/recentPerformanceStats.matches | number: '1.0-2'}} %</li>
+            <li> Avg KR Ratio: {{recentPerformanceStats.sumOfKRRatio/recentPerformanceStats.matches | number: '1.2-2'}}</li>
           </ul>
         </div>
       </div>
@@ -33,9 +34,9 @@
         <div class="card-body">
           <ul style="list-style-type: none">
             <h6 class="card-title mt-2">Stats</h6>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Kills: {{recentPerformanceStats.kills}}</li>
+            <li>Deaths: {{recentPerformanceStats.deaths}}</li>
+            <li>Assists {{recentPerformanceStats.assists}}</li>
           </ul>
         </div>
       </div>
@@ -43,9 +44,9 @@
         <div class="card-body">
           <ul style="list-style-type: none">
             <h6 class="card-title mt-2">Avg Stats</h6>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Avg Kills: {{recentPerformanceStats.kills/recentPerformanceStats.matches | number: '1.2-2'}}</li>
+            <li>Avg Deaths: {{recentPerformanceStats.deaths/recentPerformanceStats.matches | number: '1.2-2'}}</li>
+            <li>Avg Assists: {{recentPerformanceStats.assists/recentPerformanceStats.matches | number: '1.2-2'}}</li>
           </ul>
         </div>
       </div>
@@ -53,9 +54,9 @@
         <div class="card-body">
           <ul style="list-style-type: none">
             <h6 class="card-title mt-2">Avg Multi Kills</h6>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Avg Triple Kills: {{recentPerformanceStats.tripleKills/recentPerformanceStats.matches | number: '1.3-3'}}</li>
+            <li>Avg Quad Kills: {{recentPerformanceStats.quadKills/recentPerformanceStats.matches | number: '1.3-3'}}</li>
+            <li>Avg Aces: {{recentPerformanceStats.aces/recentPerformanceStats.matches | number: '1.3-3'}}</li>
           </ul>
         </div>
       </div>

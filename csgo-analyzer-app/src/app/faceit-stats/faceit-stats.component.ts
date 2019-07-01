@@ -99,16 +99,11 @@ export class FaceitStatsComponent implements OnInit {
   getMatchResults(matchId: string): void {
     this.faceitService.getMatchResults(matchId).subscribe(
       (res) => {
-        console.log('----result MatchResult----');
-
-        console.log(res['rounds'][0]);
         let match = res['rounds'][0];
-        let teamId = '';
         this.recentPerformance.matches ++;
         for(let team of match['teams']) {
           for (let player of team['players']) {
             if (player['player_id'] == this.userId) {
-              teamId = team['team_id'];
               this.recentPerformance.kills += Number(player['player_stats']['Kills']);
               this.recentPerformance.deaths += Number(player['player_stats']['Deaths']);
               this.recentPerformance.assists += Number(player['player_stats']['Assists']);

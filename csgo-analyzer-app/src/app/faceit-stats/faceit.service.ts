@@ -31,7 +31,6 @@ export class FaceitService {
 
   getMatchResults(matchId: string): Observable<any> {
     const url = 'https://open.faceit.com/data/v4/matches/' + matchId + '/stats';
-    console.log(url);
     return this.http.get(url);
   }
 

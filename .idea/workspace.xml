@@ -62,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="34">
               <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
             </state>
           </provider>
@@ -71,8 +71,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/faceit.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+            <state relative-caret-position="327">
+              <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -83,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/faceit-stats.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="59" column="2" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
+            <state relative-caret-position="412">
+              <caret line="100" column="23" selection-start-line="100" selection-start-column="23" selection-end-line="100" selection-end-column="23" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -375,12 +375,12 @@
       <workItem from="1561469131386" duration="3188000" />
       <workItem from="1561587372878" duration="5645000" />
       <workItem from="1561631501805" duration="2812000" />
-      <workItem from="1562004779828" duration="2642000" />
+      <workItem from="1562004779828" duration="3894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90882000" />
+    <option name="totallyTimeSpent" value="92134000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -778,20 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/recent-performance/recent-performance.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="29" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/recent-performance/recent-performance.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -816,13 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/auth-interceptor.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -833,10 +812,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/map-stats/map-stats.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/lifetime-stats/lifetime-stats.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/recent-performance/recent-performance.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/faceit.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="327">
+          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -845,8 +845,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/csgo-analyzer-app/src/app/faceit-stats/faceit-stats.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="59" column="2" selection-start-line="59" selection-start-column="2" selection-end-line="59" selection-end-column="2" />
+        <state relative-caret-position="412">
+          <caret line="100" column="23" selection-start-line="100" selection-start-column="23" selection-end-line="100" selection-end-column="23" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>

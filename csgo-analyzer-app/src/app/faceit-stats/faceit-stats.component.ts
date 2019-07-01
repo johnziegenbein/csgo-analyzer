@@ -56,23 +56,6 @@ export class FaceitStatsComponent implements OnInit {
       });
   }
 
-
-  getRecentPerformanceStats(): void {
-    this.faceitService.getMapHistory(this.userId, 10).subscribe(
-      (res) => {
-        console.log('----result MapHistory----');
-        console.log(res);
-
-        // for each match
-        // call faceit match result by match id
-      },
-      error => {
-        console.error('could not retrieve performance stats: ');
-        console.error(error);
-        alert('Could not aquire performance stats from faceit.');
-      });
-  }
-
   getStats(): void {
     this.faceitService.getFaceitStats(this.userId).subscribe(
       (res) => {
@@ -87,6 +70,42 @@ export class FaceitStatsComponent implements OnInit {
         alert('Could not aquire stats from faceit. Please provide correct username');
         this.username = '';
         this.showStats = false;
+      });
+  }
+
+
+  getRecentPerformanceStats(): void {
+    this.faceitService.getMapHistory(this.userId, 10).subscribe(
+      (res) => {
+        console.log('----result MapHistory----');
+        console.log(res);
+        
+        for (let match of res['items']) {
+          this.getMatchResults(match['match_id']);
+
+        }
+      },
+      error => {
+        console.error('could not retrieve performance stats: ');
+        console.error(error);
+        alert('Could not aquire performance stats from faceit.');
+      });
+  }
+
+  getMatchResults(matchId: string): void {
+    this.faceitService.getMatchResults(matchId).subscribe(
+      (res) => {
+        console.log('----result MatchResult----');
+
+        console.log(res['rounds'][0]);
+        let match = res['rounds'][0];
+
+
+      },
+      error => {
+        console.error('could not retrieve match stats: ');
+        console.error(error);
+        alert('Could not aquire match stats from faceit.');
       });
   }
 

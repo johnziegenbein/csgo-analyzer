@@ -5,8 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Deploy to GitHub Pages
 1. run from csgo-analyzer-app ng build --prod --output-path docs --base-href /csgo-analyzer/
 2. Move docs to csgo-analyzer
-3. change href to <base href="/"> in index.html
+3. change href to <base href="/csgo-analyzer/docs"> in index.html
 4. copy index.html and rename copy 404.html
+5. push to master
 
 ## Dependencies
 Bootstrap version: (npm install bootstrap@4.0.0-alpha.6 --save)

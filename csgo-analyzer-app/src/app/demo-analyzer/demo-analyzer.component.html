@@ -1,1 +1,42 @@
-<div style="color: lightgrey">Feature not yet available</div>
+<div class="container" style="color: lightgrey">
+  <h1 class="ml-3"> Demo Analyzer </h1>
+
+  <div class="alert alert-warning" role="alert">
+    This feature is not finished.
+    To use follow these steps:
+    <ol class="list-group">
+      <li class="list-group-item list-group-item-warning">
+        1. Install&nbsp;
+        <a href="https://nodejs.org/en/">NodeJs</a>
+      </li>
+      <li class="list-group-item list-group-item-warning">
+        2. Install the&nbsp;
+        <a href="https://github.com/saul/demofile">demofile</a>
+        &nbsp;library with this command: npm install --save demofile
+      </li>
+      <li class="list-group-item list-group-item-warning">
+        3. Download&nbsp;
+        <a target="_self" href="../../assets/js/ParseDemo.js" download="DemoParser.js">DemoParser.js</a>
+      </li>
+      <li class="list-group-item list-group-item-warning">
+        4.
+        Run DemoParser with the demofile you want to analyse<br>
+        &nbsp;&nbsp;&nbsp;For example:<br>
+        &nbsp;&nbsp;&nbsp;node DemoParser.js demo.dem > testdemo.csv
+      </li>
+      <li class="list-group-item list-group-item-warning">
+        5. Upload the newly generated file
+      </li>
+    </ol>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label for="file">Chose the demo to analyze</label>
+      <input type="file" class="form-control-file" id="file"
+             (change)="analyzeDemo($event)" />
+    </div>
+  </form>
+
+
+</div>

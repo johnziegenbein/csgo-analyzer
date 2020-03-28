@@ -11,6 +11,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Dependencies
 Bootstrap version: (npm install bootstrap@4.0.0-alpha.6 --save)
+CSGO demofile parser: (npm install --save demofile)
 
 ## Development server
 

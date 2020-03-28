@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ParseDemoService} from './parse-demo.service';
 
 @Component({
   selector: 'app-demo-analyzer',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoAnalyzerComponent implements OnInit {
 
-  constructor() { }
+  demoFile: File;
 
-  ngOnInit() {
+  constructor(private parseDemoService: ParseDemoService) { }
+
+  ngOnInit() {}
+
+  analyzeDemo(event: Event) {
+    // Saves the uploaded file in demoFile
+    const target = event.target as HTMLInputElement;
+    this.demoFile = (target.files as FileList)[0];
+
+    this.parseDemoService.parseDemo(this.demoFile);
+
   }
-
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ParseDemoService} from './parse-demo.service';
 import {DemoEventDelegator} from './demo-event-delegator.service';
+import {DemoData} from './datastructures/demo-data';
 
 @Component({
   selector: 'app-demo-analyzer',
@@ -24,12 +25,7 @@ export class DemoAnalyzerComponent implements OnInit {
 
     const parsedDemo = await this.parseDemoService.parseDemo(this.demoFile);
 
-    this.handleDemoEvent(parsedDemo);
-  }
+    const demoData: DemoData = this.demoEventDelegator.analyze(parsedDemo);
 
-  private handleDemoEvent(parsedDemo: string) {
-    for (const demoEvent of parsedDemo.split(/[\r\n]+/)) {
-      this.demoEventDelegator.delegate(demoEvent);
-    }
   }
 }

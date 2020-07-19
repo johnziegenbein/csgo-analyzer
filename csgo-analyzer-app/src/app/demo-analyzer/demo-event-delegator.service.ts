@@ -1,30 +1,37 @@
 import { Injectable } from '@angular/core';
+import { DemoData } from './datastructures/demo-data';
+import {MapEventAnalyzer} from './eventAnalyzers/map-event-analyzer.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DemoEventDelegator {
 
-  constructor() { }
+  constructor(private mapEventAnalyzer: MapEventAnalyzer) { }
 
-  delegate(demoEvent: string) {
-    switch (demoEvent.split(',')[0]) {
-      case DemoEvent.MAP:
-        console.log('map');
-        break;
-      case DemoEvent.TEAM:
-        console.log('Team');
-        break;
-      case DemoEvent.KILL:
-        console.log('Kill');
-        break;
-      case DemoEvent.ROUND_END:
-        console.log('Round end');
-        break;
-      default:
-        console.log('Empty or unknown event :' + demoEvent);
-        break;
+  analyze(parsedDemo: string): DemoData {
+    let demoData: DemoData = new DemoData();
+
+    for (const demoEvent of parsedDemo.split(/[\r\n]+/)) {
+      switch (demoEvent.split(',')[0]) {
+        case DemoEvent.MAP:
+          this.mapEventAnalyzer.addEventAnalysis(demoData, demoEvent);
+          break;
+        case DemoEvent.TEAM:
+          console.log('Team');
+          break;
+        case DemoEvent.KILL:
+          console.log('Kill');
+          break;
+        case DemoEvent.ROUND_END:
+          console.log('Round end');
+          break;
+        default:
+          console.log('Empty or unknown event :' + demoEvent);
+          break;
+      }
     }
+    return demoData;
   }
 }
 

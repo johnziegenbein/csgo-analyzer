@@ -14,12 +14,16 @@ export class DemoAnalyzerComponent implements OnInit {
 
   ngOnInit() {}
 
-  analyzeDemo(event: Event) {
+  async analyzeDemo(fileChangedEvent: Event) {
     // Saves the uploaded file in demoFile
-    const target = event.target as HTMLInputElement;
+    const target = fileChangedEvent.target as HTMLInputElement;
     this.demoFile = (target.files as FileList)[0];
 
-    this.parseDemoService.parseDemo(this.demoFile);
+    const parsedDemo = await this.parseDemoService.parseDemo(this.demoFile);
+
+    for (const demoEvent of parsedDemo.split(/[\r\n]+/)) {
+      console.log(demoEvent);
+    }
 
   }
 }

@@ -2,11 +2,16 @@ const demofile = require('demofile');
 const fs = require('fs');
 
 const filename = process.argv[2];
+const ROUND_START_EVENT = 'round_start';
+const ROUND_END_EVENT = 'round_end';
+const ROUND_FREEZE_END_EVENT = 'round_freeze_end';
+const PLAYER_DEATH_EVENT = 'player_death';
+const DELIMITER = ",";
+
 
 const T = 2;
 const CT = 3;
 
-const DELIMITER = ",";
 
 let lastRoundTime = 0;
 let round = -3;
@@ -22,10 +27,8 @@ fs.readFile(filename, function (err, buffer) {
   demoFile.parse(buffer);
 });
 
-
-
 function onRoundStart(demoFile) {
-  demoFile.gameEvents.on('round_start', () => {
+  demoFile.gameEvents.on(ROUND_START_EVENT, () => {
     round++;
     writeGameInformationBeforeFirstRound(demoFile);
   });
@@ -45,13 +48,13 @@ function writeGameInformationBeforeFirstRound(demoFile) {
 }
 
 function onRoundFreezeEnd(demoFile) {
-  demoFile.gameEvents.on('round_freeze_end', () => {
+  demoFile.gameEvents.on(ROUND_FREEZE_END_EVENT, () => {
     lastRoundTime = demoFile.currentTime;
   });
 }
 
 function onPlayerDeath(demoFile) {
-  demoFile.gameEvents.on('player_death', deathEvent => {
+  demoFile.gameEvents.on(PLAYER_DEATH_EVENT, deathEvent => {
 
     if (round >= 1) {
       let victim = demoFile.entities.getByUserId(deathEvent.userid);
@@ -125,7 +128,7 @@ function getFreezeTimeEndEquipmentValue(playerEntity) {
 }
 
 function onRoundEnd(demoFile) {
-  demoFile.gameEvents.on('round_end', e => {
+  demoFile.gameEvents.on(ROUND_END_EVENT, e => {
     if (round >= 1) {
       console.log("round_end," + getTeam(e.winner) + "," + e.reason + "," + e.message)
     }

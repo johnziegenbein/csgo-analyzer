@@ -31,6 +31,7 @@ export class DemoEventDelegator {
           break;
       }
     }
+    console.log(demoData);
     return demoData;
   }
 }

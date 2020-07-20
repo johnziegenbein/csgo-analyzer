@@ -1,5 +1,5 @@
-import {MapData} from './map-data';
+import {MatchData} from './match-data';
 
 export class DemoData {
-  mapData: MapData;
+  matchData: MatchData = new MatchData();
 }

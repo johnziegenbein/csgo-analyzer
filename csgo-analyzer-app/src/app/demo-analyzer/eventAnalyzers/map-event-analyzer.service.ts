@@ -9,6 +9,6 @@ export class MapEventAnalyzer implements EventAnalyzer {
   constructor() { }
 
   addEventAnalysis(demoData: DemoData, demoEvent: string) {
-    console.log("hej");
+    demoData.matchData.map = demoEvent.split(',')[1];
   }
 }

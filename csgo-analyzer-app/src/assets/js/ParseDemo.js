@@ -61,7 +61,7 @@ function onPlayerDeath(demoFile) {
 
       let time = (demoFile.currentTime - lastRoundTime).toFixed(2);
 
-      // Kill, Round, Killer, Victim, Assist, KillerClanName,KillerTeam, VictimTeam, Weapon, Headshot, RoundTime, Killerposition,
+      // Kill, Round, Killer, Victim, Assist, KillerTeam, VictimTeam, Weapon, Headshot, RoundTime, Killerposition,
       // Killeryaw, Victimposition, Victimyaw, KillerStartEQ, KillerFreezeEQ, VictimStartEQ, VictimFreezeEQ
       console.log(buildKillinformationString(deathEvent, victim, attacker, assister, time));
     }
@@ -74,7 +74,6 @@ function buildKillinformationString(deathEvent, victim, attacker, assister, time
   stringBuiler += getName(attacker) + DELIMITER;
   stringBuiler += getName(victim) + DELIMITER;
   stringBuiler += getName(assister) + DELIMITER;
-  stringBuiler +=  + DELIMITER;
   stringBuiler += getTeamFromEntity(attacker) + DELIMITER;
   stringBuiler += getTeamFromEntity(victim) + DELIMITER;
   stringBuiler += deathEvent.weapon + DELIMITER;

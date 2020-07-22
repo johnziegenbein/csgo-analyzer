@@ -8,10 +8,8 @@ const ROUND_FREEZE_END_EVENT = 'round_freeze_end';
 const PLAYER_DEATH_EVENT = 'player_death';
 const DELIMITER = ",";
 
-
 const T = 2;
 const CT = 3;
-
 
 let lastRoundTime = 0;
 let round = -3;
@@ -36,14 +34,14 @@ function onRoundStart(demoFile) {
 
 function writeGameInformationBeforeFirstRound(demoFile) {
   if (round === 1) {
-    console.log("Map," + demoFile.header.mapName);
+    console.log("Map" + DELIMITER + demoFile.header.mapName);
 
     let teams = demoFile.entities.teams;
     let tPlayers = teams[T].members;
     let ctPlayers = teams[CT].members;
 
-    console.log("Team," + teams[T].clanName + "," + tPlayers[0].name + "," + tPlayers[1].name + "," + tPlayers[2].name + "," + tPlayers[3].name + "," + tPlayers[4].name + ",T");
-    console.log("Team," + teams[CT].clanName + "," + ctPlayers[0].name + "," + ctPlayers[1].name + "," + ctPlayers[2].name + "," + ctPlayers[3].name + "," + ctPlayers[4].name + ",CT");
+    console.log("Team," + teams[T].clanName + DELIMITER + tPlayers[0].name + DELIMITER + tPlayers[1].name + DELIMITER + tPlayers[2].name + DELIMITER + tPlayers[3].name + DELIMITER + tPlayers[4].name + ",T");
+    console.log("Team," + teams[CT].clanName + DELIMITER + ctPlayers[0].name + DELIMITER + ctPlayers[1].name + DELIMITER + ctPlayers[2].name + DELIMITER + ctPlayers[3].name + DELIMITER + ctPlayers[4].name + ",CT");
   }
 }
 
@@ -63,7 +61,7 @@ function onPlayerDeath(demoFile) {
 
       let time = (demoFile.currentTime - lastRoundTime).toFixed(2);
 
-      // Kill, Round, Killer, Victim, Assist, KillerTeam, VictimTeam, Weapon, Headshot, RoundTime, Killerposition,
+      // Kill, Round, Killer, Victim, Assist, KillerClanName,KillerTeam, VictimTeam, Weapon, Headshot, RoundTime, Killerposition,
       // Killeryaw, Victimposition, Victimyaw, KillerStartEQ, KillerFreezeEQ, VictimStartEQ, VictimFreezeEQ
       console.log(buildKillinformationString(deathEvent, victim, attacker, assister, time));
     }
@@ -76,8 +74,9 @@ function buildKillinformationString(deathEvent, victim, attacker, assister, time
   stringBuiler += getName(attacker) + DELIMITER;
   stringBuiler += getName(victim) + DELIMITER;
   stringBuiler += getName(assister) + DELIMITER;
-  stringBuiler += getTeam(attacker) + DELIMITER;
-  stringBuiler += getTeam(victim) + DELIMITER;
+  stringBuiler +=  + DELIMITER;
+  stringBuiler += getTeamFromEntity(attacker) + DELIMITER;
+  stringBuiler += getTeamFromEntity(victim) + DELIMITER;
   stringBuiler += deathEvent.weapon + DELIMITER;
   stringBuiler += getHeadShotText(deathEvent) + DELIMITER;
   stringBuiler += time + DELIMITER;
@@ -92,11 +91,15 @@ function buildKillinformationString(deathEvent, victim, attacker, assister, time
   return stringBuiler;
 }
 
-function getTeam(playerEntity) {
+function getTeamFromEntity(playerEntity) {
   if (playerEntity != null) {
     return playerEntity.teamNumber === T ? 'T' : 'CT';
   }
   return "-";
+}
+
+function getTeamFromString(side) {
+  return side === T ? 'T' : 'CT';
 }
 
 function getName(playerEntity) {
@@ -129,8 +132,8 @@ function getFreezeTimeEndEquipmentValue(playerEntity) {
 
 function onRoundEnd(demoFile) {
   demoFile.gameEvents.on(ROUND_END_EVENT, e => {
-    if (round >= 1) {
-      console.log("round_end," + getTeam(e.winner) + "," + e.reason + "," + e.message)
+    if (round >= 0) {
+      console.log("round_end," + getTeamFromString(e.winner) + DELIMITER + e.reason + DELIMITER + e.message)
     }
   });
 }

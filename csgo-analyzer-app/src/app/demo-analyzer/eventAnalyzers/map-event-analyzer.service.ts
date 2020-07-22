@@ -8,7 +8,7 @@ import {DemoData} from '../datastructures/demo-data';
 export class MapEventAnalyzer implements EventAnalyzer {
   constructor() { }
 
-  addEventAnalysis(demoData: DemoData, demoEvent: string) {
-    demoData.matchData.map = demoEvent.split(',')[1];
+  addEventAnalysis(demoData: DemoData, eventList: string[]) {
+    demoData.matchData.map = eventList[1];
   }
 }

@@ -4,7 +4,6 @@ import {DemoData} from '../datastructures/demo-data';
 import {CS_SIDE, TeamData} from '../datastructures/team-data';
 import {PlayerData} from '../datastructures/player-data';
 
-
 const TEAM_NAME_INDEX = 1;
 const PLAYER_NAMES_INDEX = [2, 3, 4, 5, 6];
 const TEAM_STARTING_SIDE_INDEX = 7;
@@ -13,21 +12,19 @@ const TEAM_STARTING_SIDE_INDEX = 7;
   providedIn: 'root'
 })
 
-
 export class TeamEventAnalyzer implements EventAnalyzer {
   constructor() {
   }
 
-  addEventAnalysis(demoData: DemoData, demoEvent: string) {
-    const eventList = demoEvent.split(',');
-
+  addEventAnalysis(demoData: DemoData, eventList: string[]) {
     const teamData: TeamData = {
+      wins: 0,
       name: eventList[TEAM_NAME_INDEX],
       players: this.createListOfPlayersFromEvent(eventList),
       startAs: eventList[TEAM_STARTING_SIDE_INDEX] === CS_SIDE.CT ?
         CS_SIDE.CT : CS_SIDE.T
     };
-    demoData.teams.set(teamData.name, teamData);
+    demoData.teams.push(teamData);
   }
 
   private createListOfPlayersFromEvent(eventList: string[]) {

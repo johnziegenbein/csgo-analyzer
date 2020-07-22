@@ -1,6 +1,8 @@
+import {KillData} from './kill-data';
+
 export class PlayerData {
   name = '';
-  kills = 0;
+  kills: KillData[] = [];
   deaths = 0;
   assists = 0;
 

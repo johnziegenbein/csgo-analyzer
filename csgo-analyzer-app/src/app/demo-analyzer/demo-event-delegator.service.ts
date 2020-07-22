@@ -3,6 +3,7 @@ import { DemoData } from './datastructures/demo-data';
 import {MapEventAnalyzer} from './eventAnalyzers/map-event-analyzer.service';
 import {TeamEventAnalyzer} from './eventAnalyzers/team-event-analyzer.service';
 import {RoundEventAnalyzer} from './eventAnalyzers/round-event-analyzer.service';
+import {KillEventAnalyzer} from './eventAnalyzers/kill-event-analyzer.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class DemoEventDelegator {
 
   constructor(private mapEventAnalyzer: MapEventAnalyzer,
               private teamEventAnalyzer: TeamEventAnalyzer,
-              private  roundEventAnalyzer: RoundEventAnalyzer) { }
+              private  roundEventAnalyzer: RoundEventAnalyzer,
+              private killEventAnalyzer: KillEventAnalyzer) { }
 
   analyze(parsedDemo: string): DemoData {
     let demoData: DemoData = new DemoData();
@@ -26,7 +28,7 @@ export class DemoEventDelegator {
           this.teamEventAnalyzer.addEventAnalysis(demoData, eventList);
           break;
         case DemoEvent.KILL:
-          console.log('Kill');
+          this.killEventAnalyzer.addEventAnalysis(demoData, eventList);
           break;
         case DemoEvent.ROUND_END:
           this.roundEventAnalyzer.addEventAnalysis(demoData, eventList);

@@ -1,7 +1,7 @@
 import {MatchData} from './match-data';
 import {TeamData} from './team-data';
 
-const SIDE_SWITCH_ROUND = 16;
+const SIDE_SWITCH_ROUND = 15;
 
 export class DemoData {
   matchData: MatchData = new MatchData();
@@ -9,7 +9,7 @@ export class DemoData {
 
   /**
    * todo: Fix overtime
-   * @param winningTeamSide
+   * todo: Fix player dc
    */
   getTeamBySide(winningTeamSide: string): TeamData {
     if (this.matchData.rounds < SIDE_SWITCH_ROUND) {

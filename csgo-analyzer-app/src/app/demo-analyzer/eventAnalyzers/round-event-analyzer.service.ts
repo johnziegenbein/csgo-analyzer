@@ -11,8 +11,7 @@ export class RoundEventAnalyzer implements EventAnalyzer {
   constructor() { }
 
   addEventAnalysis(demoData: DemoData, demoList: string[]) {
-    demoData.matchData.rounds ++;
-
     demoData.getTeamBySide(demoList[WINNING_TEAM_SIDE_INDEX]).wins ++;
+    demoData.matchData.rounds ++;
   }
 }

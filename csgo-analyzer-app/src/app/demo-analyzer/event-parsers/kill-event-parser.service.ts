@@ -34,6 +34,15 @@ export class KillEventParser implements EventParser {
     demoData.getTeamBySide(eventList[VICTIM_TEAM_INDEX])
       .players.get(eventList[VICTIM_INDEX])
       .deaths.push(this.mapDeathData(eventList));
+
+    this.parseAssist(eventList, demoData);
+  }
+
+  private parseAssist(eventList: string[], demoData: DemoData) {
+    const assister: string = eventList[ASSIST_INDEX];
+    if (assister !== '-' && !demoData.isOnSameTeam(assister, eventList[VICTIM_INDEX])) {
+      demoData.getPlayerByName(eventList[ASSIST_INDEX]).assists++;
+    }
   }
 
   private mapKillData(eventList: string[]) {

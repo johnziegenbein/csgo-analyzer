@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {DemoData} from '../datastructures/demo-data';
+import {DemoDataService} from '../demo-data.service';
 
 @Component({
   selector: 'app-demo-results',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoResultsComponent implements OnInit {
 
-  constructor() { }
+  demoData: DemoData;
+
+  constructor(demoDataService: DemoDataService) {
+    this.demoData = demoDataService.demoData;
+  }
 
   ngOnInit() {
   }

@@ -26,16 +26,21 @@ export class KillEventParser implements EventParser {
   constructor() { }
 
   parseEventIntoDemoData(demoData: DemoData, eventList: string[]) {
+    this.parseKills(demoData, eventList);
+    this.parseDeaths(demoData, eventList);
+    this.parseAssist(eventList, demoData);
+  }
 
+  private parseKills(demoData: DemoData, eventList: string[]) {
     demoData.getTeamBySide(eventList[KILLER_TEAM_INDEX])
       .players.get(eventList[KILLER_INDEX])
       .kills.push(this.mapKillData(eventList));
+  }
 
+  private parseDeaths(demoData: DemoData, eventList: string[]) {
     demoData.getTeamBySide(eventList[VICTIM_TEAM_INDEX])
       .players.get(eventList[VICTIM_INDEX])
       .deaths.push(this.mapDeathData(eventList));
-
-    this.parseAssist(eventList, demoData);
   }
 
   private parseAssist(eventList: string[], demoData: DemoData) {

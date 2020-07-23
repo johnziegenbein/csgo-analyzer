@@ -22,6 +22,7 @@ import { AuthInterceptor } from './faceit-stats/auth-interceptor';
 import { LifetimeStatsComponent } from './faceit-stats/lifetime-stats/lifetime-stats.component';
 import { MapStatsComponent } from './faceit-stats/map-stats/map-stats.component';
 import { RecentPerformanceComponent } from './faceit-stats/recent-performance/recent-performance.component';
+import { DemoResultsComponent } from './demo-analyzer/demo-results/demo-results.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { RecentPerformanceComponent } from './faceit-stats/recent-performance/re
     LifetimeStatsComponent,
     MapStatsComponent,
     RecentPerformanceComponent,
+    DemoResultsComponent,
   ],
   imports: [
     BrowserModule,

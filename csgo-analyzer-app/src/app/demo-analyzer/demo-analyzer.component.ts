@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DemoReaderService} from './demo-reader.service';
 import {DemoParserDelegator} from './demo-event-delegator.service';
 import {DemoData} from './datastructures/demo-data';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-demo-analyzer',
@@ -13,7 +14,8 @@ export class DemoAnalyzerComponent implements OnInit {
   demoFile: File;
 
   constructor(private demoReader: DemoReaderService,
-              private demoParserDelegator: DemoParserDelegator) {
+              private demoParserDelegator: DemoParserDelegator,
+              private router: Router) {
   }
 
   ngOnInit() {}
@@ -24,7 +26,8 @@ export class DemoAnalyzerComponent implements OnInit {
     this.demoFile = (target.files as FileList)[0];
 
     const demo = await this.demoReader.readDemo(this.demoFile);
-    const demoData: DemoData = this.demoParserDelegator.parseDemoFromCsv(demo);
+    const demoData: DemoData = await this.demoParserDelegator.parseDemoFromCsv(demo);
 
+    this.router.navigate(['demo/result']);
   }
 }

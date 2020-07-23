@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {EventAnalyzer} from './event-analyzer.service';
+import {EventParser} from './event-parser.service';
 import {DemoData} from '../datastructures/demo-data';
 
 const WINNING_TEAM_SIDE_INDEX = 1;
@@ -7,10 +7,10 @@ const WINNING_TEAM_SIDE_INDEX = 1;
 @Injectable({
   providedIn: 'root'
 })
-export class RoundEventAnalyzer implements EventAnalyzer {
+export class RoundEventParser implements EventParser {
   constructor() { }
 
-  addEventAnalysis(demoData: DemoData, demoList: string[]) {
+  parseEventIntoDemoData(demoData: DemoData, demoList: string[]) {
     demoData.getTeamBySide(demoList[WINNING_TEAM_SIDE_INDEX]).wins ++;
     demoData.matchData.rounds ++;
   }

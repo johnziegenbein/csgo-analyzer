@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ParseDemoService } from './parse-demo.service';
+import { DemoReaderService } from './demo-reader.service';
 
 describe('ParseDemoService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ParseDemoService = TestBed.get(ParseDemoService);
+    const service: DemoReaderService = TestBed.get(DemoReaderService);
     expect(service).toBeTruthy();
   });
 });

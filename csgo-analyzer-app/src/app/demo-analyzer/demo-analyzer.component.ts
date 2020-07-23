@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ParseDemoService} from './parse-demo.service';
-import {DemoEventDelegator} from './demo-event-delegator.service';
+import {DemoReaderService} from './demo-reader.service';
+import {DemoParserDelegator} from './demo-event-delegator.service';
 import {DemoData} from './datastructures/demo-data';
 
 @Component({
@@ -12,8 +12,8 @@ export class DemoAnalyzerComponent implements OnInit {
 
   demoFile: File;
 
-  constructor(private parseDemoService: ParseDemoService,
-              private demoEventDelegator: DemoEventDelegator) {
+  constructor(private demoReader: DemoReaderService,
+              private demoParserDelegator: DemoParserDelegator) {
   }
 
   ngOnInit() {}
@@ -23,9 +23,8 @@ export class DemoAnalyzerComponent implements OnInit {
     const target = fileChangedEvent.target as HTMLInputElement;
     this.demoFile = (target.files as FileList)[0];
 
-    const parsedDemo = await this.parseDemoService.parseDemo(this.demoFile);
-
-    const demoData: DemoData = this.demoEventDelegator.analyze(parsedDemo);
+    const demo = await this.demoReader.readDemo(this.demoFile);
+    const demoData: DemoData = this.demoParserDelegator.parseDemoFromCsv(demo);
 
   }
 }

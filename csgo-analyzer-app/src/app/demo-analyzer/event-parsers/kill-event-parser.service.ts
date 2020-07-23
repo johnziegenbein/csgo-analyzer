@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {EventAnalyzer} from './event-analyzer.service';
+import {EventParser} from './event-parser.service';
 import {DemoData} from '../datastructures/demo-data';
 import {KillData} from '../datastructures/kill-data';
 
@@ -21,10 +21,10 @@ const VICTIM_YAW_INDEX = 13;
   providedIn: 'root'
 })
 
-export class KillEventAnalyzer implements EventAnalyzer {
+export class KillEventParser implements EventParser {
   constructor() { }
 
-  addEventAnalysis(demoData: DemoData, eventList: string[]) {
+  parseEventIntoDemoData(demoData: DemoData, eventList: string[]) {
     const killerTeam = eventList[KILLER_TEAM_INDEX];
     const killer = eventList[KILLER_INDEX];
 

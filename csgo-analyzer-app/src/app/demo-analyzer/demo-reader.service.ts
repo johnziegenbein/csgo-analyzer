@@ -3,11 +3,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ParseDemoService {
+export class DemoReaderService {
 
   constructor() { }
 
-  parseDemo(file: File): Promise<string> {
+  readDemo(file: File): Promise<string> {
     return new Promise<string>((resolve, reject) => {
       if (!file) {
         resolve('');

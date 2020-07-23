@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {EventAnalyzer} from './event-analyzer.service';
+import {EventParser} from './event-parser.service';
 import {DemoData} from '../datastructures/demo-data';
 import {CS_SIDE, TeamData} from '../datastructures/team-data';
 import {PlayerData} from '../datastructures/player-data';
@@ -12,11 +12,11 @@ const TEAM_STARTING_SIDE_INDEX = 7;
   providedIn: 'root'
 })
 
-export class TeamEventAnalyzer implements EventAnalyzer {
+export class TeamEventParser implements EventParser {
   constructor() {
   }
 
-  addEventAnalysis(demoData: DemoData, eventList: string[]) {
+  parseEventIntoDemoData(demoData: DemoData, eventList: string[]) {
     const teamData: TeamData = {
       wins: 0,
       name: eventList[TEAM_NAME_INDEX],

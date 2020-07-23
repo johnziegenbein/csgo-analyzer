@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import {EventAnalyzer} from './event-analyzer.service';
+import {EventParser} from './event-parser.service';
 import {DemoData} from '../datastructures/demo-data';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MapEventAnalyzer implements EventAnalyzer {
+export class MapEventParser implements EventParser {
   constructor() { }
 
-  addEventAnalysis(demoData: DemoData, eventList: string[]) {
+  parseEventIntoDemoData(demoData: DemoData, eventList: string[]) {
     demoData.matchData.map = eventList[1];
   }
 }

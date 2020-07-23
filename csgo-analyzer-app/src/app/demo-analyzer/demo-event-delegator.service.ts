@@ -1,37 +1,37 @@
 import { Injectable } from '@angular/core';
 import { DemoData } from './datastructures/demo-data';
-import {MapEventAnalyzer} from './eventAnalyzers/map-event-analyzer.service';
-import {TeamEventAnalyzer} from './eventAnalyzers/team-event-analyzer.service';
-import {RoundEventAnalyzer} from './eventAnalyzers/round-event-analyzer.service';
-import {KillEventAnalyzer} from './eventAnalyzers/kill-event-analyzer.service';
+import {MapEventParser} from './event-parsers/map-event-parser.service';
+import {TeamEventParser} from './event-parsers/team-event-parser.service';
+import {RoundEventParser} from './event-parsers/round-event-parser.service';
+import {KillEventParser} from './event-parsers/kill-event-parser.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DemoEventDelegator {
+export class DemoParserDelegator {
 
-  constructor(private mapEventAnalyzer: MapEventAnalyzer,
-              private teamEventAnalyzer: TeamEventAnalyzer,
-              private  roundEventAnalyzer: RoundEventAnalyzer,
-              private killEventAnalyzer: KillEventAnalyzer) { }
+  constructor(private mapEventAnalyzer: MapEventParser,
+              private teamEventAnalyzer: TeamEventParser,
+              private  roundEventAnalyzer: RoundEventParser,
+              private killEventAnalyzer: KillEventParser) { }
 
-  analyze(parsedDemo: string): DemoData {
+  parseDemoFromCsv(csvDemo: string): DemoData {
     let demoData: DemoData = new DemoData();
 
-    for (const demoEvent of parsedDemo.split(/[\r\n]+/)) {
+    for (const demoEvent of csvDemo.split(/[\r\n]+/)) {
       const eventList = demoEvent.split(',');
       switch (eventList[0]) {
         case DemoEvent.MAP:
-          this.mapEventAnalyzer.addEventAnalysis(demoData, eventList);
+          this.mapEventAnalyzer.parseEventIntoDemoData(demoData, eventList);
           break;
         case DemoEvent.TEAM:
-          this.teamEventAnalyzer.addEventAnalysis(demoData, eventList);
+          this.teamEventAnalyzer.parseEventIntoDemoData(demoData, eventList);
           break;
         case DemoEvent.KILL:
-          this.killEventAnalyzer.addEventAnalysis(demoData, eventList);
+          this.killEventAnalyzer.parseEventIntoDemoData(demoData, eventList);
           break;
         case DemoEvent.ROUND_END:
-          this.roundEventAnalyzer.addEventAnalysis(demoData, eventList);
+          this.roundEventAnalyzer.parseEventIntoDemoData(demoData, eventList);
           break;
         default:
           console.log('Empty or unknown event :' + demoEvent);

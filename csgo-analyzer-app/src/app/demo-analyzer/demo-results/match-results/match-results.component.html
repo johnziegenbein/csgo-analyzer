@@ -1,0 +1,21 @@
+<div class="card mb-3" style="width: 100%; background: gray; color: black">
+  <div class="card-header bg-primary" style="font-weight: bold; font-size: 24px; border: solid thin black;"
+       (click)="toggleShowMatchResults()">
+    Match Results
+  </div>
+  <ng-container *ngIf="showMatchResults">
+    <div>
+      <br>
+      <p style="text-align: center; font-size: 40px; font-weight: bold">
+        {{demoData.teams[0].name}}
+        <span *ngIf="demoData.teams[0].wins > demoData.teams[1].wins" style="color: #2b542c"> {{demoData.teams[0].wins}}</span>
+        <span *ngIf="demoData.teams[0].wins < demoData.teams[1].wins" style="color: #c12e2a"> {{demoData.teams[0].wins}}</span>
+         -
+        <span *ngIf="demoData.teams[1].wins > demoData.teams[0].wins" style="color: #2b542c"> {{demoData.teams[1].wins}}</span>
+        <span *ngIf="demoData.teams[1].wins < demoData.teams[0].wins" style="color: #c12e2a"> {{demoData.teams[1].wins}}</span>
+         {{demoData.teams[1].name}}
+      </p>
+      <p style="text-align: center; font-size: 40px">{{demoData.matchData.map}}</p>
+    </div>
+  </ng-container>
+</div>

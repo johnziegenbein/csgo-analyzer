@@ -23,6 +23,7 @@ import { LifetimeStatsComponent } from './faceit-stats/lifetime-stats/lifetime-s
 import { MapStatsComponent } from './faceit-stats/map-stats/map-stats.component';
 import { RecentPerformanceComponent } from './faceit-stats/recent-performance/recent-performance.component';
 import { DemoResultsComponent } from './demo-analyzer/demo-results/demo-results.component';
+import { MatchResultsComponent } from './demo-analyzer/demo-results/match-results/match-results.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { DemoResultsComponent } from './demo-analyzer/demo-results/demo-results.
     MapStatsComponent,
     RecentPerformanceComponent,
     DemoResultsComponent,
+    MatchResultsComponent,
   ],
   imports: [
     BrowserModule,

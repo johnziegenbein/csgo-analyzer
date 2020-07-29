@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DemoData} from '../../datastructures/demo-data';
-import {DemoDataService} from '../../demo-data.service';
+import {DemoData} from '../../../datastructures/demo-data';
+import {DemoDataService} from '../../../demo-data.service';
 
 @Component({
   selector: 'app-team-results-overview',

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PlayerData} from '../../../../datastructures/player-data';
+import {PlayerData} from '../../../../../datastructures/player-data';
 
 @Component({
   selector: 'app-player-overview',

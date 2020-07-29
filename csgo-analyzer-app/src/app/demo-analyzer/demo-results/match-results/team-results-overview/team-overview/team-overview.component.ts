@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TeamData} from '../../../datastructures/team-data';
+import {TeamData} from '../../../../datastructures/team-data';
 
 @Component({
   selector: 'app-team-overview',

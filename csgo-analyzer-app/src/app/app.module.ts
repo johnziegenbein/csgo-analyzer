@@ -24,9 +24,9 @@ import { MapStatsComponent } from './faceit-stats/map-stats/map-stats.component'
 import { RecentPerformanceComponent } from './faceit-stats/recent-performance/recent-performance.component';
 import { DemoResultsComponent } from './demo-analyzer/demo-results/demo-results.component';
 import { MatchResultsComponent } from './demo-analyzer/demo-results/match-results/match-results.component';
-import { TeamResultsOverviewComponent } from './demo-analyzer/demo-results/team-results-overview/team-results-overview.component';
-import { TeamOverviewComponent } from './demo-analyzer/demo-results/team-results-overview/team-overview/team-overview.component';
-import { PlayerOverviewComponent } from './demo-analyzer/demo-results/team-results-overview/team-overview/player-overview/player-overview.component';
+import { TeamResultsOverviewComponent } from './demo-analyzer/demo-results/match-results/team-results-overview/team-results-overview.component';
+import { TeamOverviewComponent } from './demo-analyzer/demo-results/match-results/team-results-overview/team-overview/team-overview.component';
+import { PlayerOverviewComponent } from './demo-analyzer/demo-results/match-results/team-results-overview/team-overview/player-overview/player-overview.component';
 import { TeamResultsComponent } from './demo-analyzer/demo-results/team-results/team-results.component';
 import { PlayerResultsComponent } from './demo-analyzer/demo-results/player-results/player-results.component';
 

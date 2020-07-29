@@ -1,0 +1,18 @@
+<div class="card mb-3" style="width: 100%; background: gray; color: black">
+  <div class="card-header bg-primary" style="font-weight: bold; font-size: 24px; border: solid thin black;"
+       (click)="toggleShowTeamOverviewResults()">
+    Team Overview
+  </div>
+  <ng-container *ngIf="showTeamOverviewResults">
+    <div class="card-group">
+      <!--Team 1 --->
+      <div class="card-block">
+        <app-team-overview [team]="demoData.teams[0]"></app-team-overview>
+      </div>
+      <!--Team 2 --->
+      <div class="card-block">
+        <app-team-overview [team]="demoData.teams[1]"></app-team-overview>
+      </div>
+    </div>
+  </ng-container>
+</div>

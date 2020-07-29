@@ -1,0 +1,68 @@
+<div class="card mb-3" style="width: 100%; background: gray; color: black; border: solid thin black">
+  <div class="card-header bg-primary"
+       style="font-weight: bold; width: 100%; overflow: hidden; font-size: 24px; border: solid thin black;">
+    {{team.name}}
+  </div>
+  <ul class="list-group list-group-flush" style="border: solid thin black">
+    <!-- header -->
+    <li class="list-group-item" style="background: grey; color: black">
+      <div class="row no-gutters" style="width: 100%; font-weight: bold;">
+        <div class="col-md-4">
+          <div class="card-body">
+            Player
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card-body">
+            Kills
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card-body">
+            Deaths
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="card-body">
+            Assists
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- player components -->
+    <li class="list-group-item" style="background: gray; color: black;">
+      <div style="width: 100%">
+        <app-player-overview [player]="team.players.get(keyArray[0])"></app-player-overview>
+      </div>
+    </li>
+    <li class="list-group-item" style="background: gray; color: black;">
+      <div style="width: 100%">
+        <app-player-overview [player]="team.players.get(keyArray[1])"></app-player-overview>
+      </div>
+    </li>
+    <li class="list-group-item" style="background: gray; color: black;">
+      <div style="width: 100%">
+        <app-player-overview [player]="team.players.get(keyArray[2])"></app-player-overview>
+      </div>
+    </li>
+    <li class="list-group-item" style="background: gray; color: black;">
+      <div style="width: 100%">
+        <app-player-overview [player]="team.players.get(keyArray[3])"></app-player-overview>
+      </div>
+    </li>
+    <li class="list-group-item" style="background: gray; color: black;">
+      <div style="width: 100%">
+        <app-player-overview [player]="team.players.get(keyArray[4])"></app-player-overview>
+      </div>
+    </li>
+
+    <!-- analyze team button -->
+    <li class="list-group-item">
+      <p>button</p>
+    </li>
+
+  </ul>
+
+
+</div>

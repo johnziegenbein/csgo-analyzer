@@ -4,7 +4,8 @@
     Match Results
   </div>
   <ng-container *ngIf="showMatchResults">
-    <div>
+    <div [ngStyle]="{'background-image': getImageUrl(demoData.matchData.map), 'background-repeat': 'no-repeat',
+    'background-size': '100% 100%'}">
       <br>
       <p style="text-align: center; font-size: 40px; font-weight: bold">
         {{demoData.teams[0].name}}

@@ -27,6 +27,7 @@ import { MatchResultsComponent } from './demo-analyzer/demo-results/match-result
 import { TeamResultsOverviewComponent } from './demo-analyzer/demo-results/team-results-overview/team-results-overview.component';
 import { TeamOverviewComponent } from './demo-analyzer/demo-results/team-results-overview/team-overview/team-overview.component';
 import { PlayerOverviewComponent } from './demo-analyzer/demo-results/team-results-overview/team-overview/player-overview/player-overview.component';
+import { TeamResultsComponent } from './demo-analyzer/demo-results/team-results/team-results.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { PlayerOverviewComponent } from './demo-analyzer/demo-results/team-resul
     TeamResultsOverviewComponent,
     TeamOverviewComponent,
     PlayerOverviewComponent,
+    TeamResultsComponent,
   ],
   imports: [
     BrowserModule,

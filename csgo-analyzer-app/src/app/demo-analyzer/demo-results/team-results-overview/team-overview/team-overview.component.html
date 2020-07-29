@@ -58,8 +58,11 @@
     </li>
 
     <!-- analyze team button -->
-    <li class="list-group-item">
-      <p>button</p>
+    <li class="list-group-item" style="background: gray; color: black; display: flex; justify-content: center;  align-items: center;">
+      <a class="btn btn-primary" type="button" style="color: lightgrey; border: solid thin black"
+         [routerLink]="['/demo/result/', team.name]">
+        See Team Analysis
+      </a>
     </li>
 
   </ul>

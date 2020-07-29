@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {TeamData} from '../../datastructures/team-data';
+import {ActivatedRoute} from '@angular/router';
+import {DemoDataService} from '../../demo-data.service';
 
 @Component({
   selector: 'app-team-results',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamResultsComponent implements OnInit {
 
-  constructor() { }
+  teamData: TeamData;
+
+  constructor(private demoDataService: DemoDataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.teamData = this.demoDataService.demoData.getTeamByName(params.get('name'));
+    });
   }
 
 }

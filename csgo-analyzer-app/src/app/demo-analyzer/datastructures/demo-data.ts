@@ -1,6 +1,6 @@
 import {MatchData} from './match-data';
 import {TeamData} from './team-data';
-import {PlayerData} from "./player-data";
+import {PlayerData} from './player-data';
 
 const SIDE_SWITCH_ROUND = 15;
 
@@ -32,5 +32,14 @@ export class DemoData {
   isOnSameTeam(player1: string, player2: string) {
     return (this.teams[0].players.has(player1) && this.teams[0].players.has(player2))
       || (this.teams[1].players.has(player1) && this.teams[1].players.has(player2));
+  }
+
+  getTeamByName(teamName: string): TeamData {
+    for (const team of this.teams) {
+      if (team.name === teamName) {
+        return team;
+      }
+    }
+    throw TypeError('Team: ' + teamName + ' not found');
   }
 }
